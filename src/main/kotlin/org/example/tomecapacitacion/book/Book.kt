@@ -1,4 +1,4 @@
-package org.example.tomecapacitacion.entities
+package org.example.tomecapacitacion.book
 
 import jakarta.persistence.CollectionTable
 import jakarta.persistence.Column

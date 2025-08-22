@@ -1,6 +1,5 @@
-package org.example.tomecapacitacion.repositories
+package org.example.tomecapacitacion.book
 
-import org.example.tomecapacitacion.entities.Book
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Repository
@@ -18,5 +17,6 @@ interface BookRepository : JpaRepository<Book, Long> {
 
     @Query("SELECT b FROM Book b JOIN b.tags t WHERE t IN :tags")
     fun findByTagsIn(tags: Set<String>): List<Book>
+
 
 }
