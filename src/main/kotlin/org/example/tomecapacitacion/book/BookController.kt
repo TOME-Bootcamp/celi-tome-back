@@ -1,11 +1,13 @@
 package org.example.tomecapacitacion.book
 
-import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.CrossOrigin
 
-@Controller
-@RequestMapping("/books")
+@RestController
+@RequestMapping("/api/books")
+@CrossOrigin(origins = ["http://localhost:3000"])
 class BookController(private val bookService: BookService) {
 
     @GetMapping
@@ -17,5 +19,4 @@ class BookController(private val bookService: BookService) {
     fun getAllBooksCards(): List<BookDTO> {
         return bookService.getAllBooksDTO()
     }
-
 }
